@@ -6,135 +6,150 @@
     <title>Pug Quiz</title>
     <script src="https://cdn.tailwindcss.com"></script>    
 </head>
-<body class="flex flex-col items-center">
+<body class="flex h-screen place-items-center justify-center">
     <!-- Intro Page -->
-    <div id="intro" class="flex flex-col  items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div id="intro" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1-P47wGJa1Ai94D1zLYS8Jog2LbHGVWgX" alt="Astro looking up.">
     <div class="flex flex-col justify-between p-4 leading-normal">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
         <p class="flex mb-3 justify-center font-normal text-gray-900 dark:text-gray-400">Take the quiz to test your pug knowledge.</p>
         <input type="button" value="Start Quiz" class="inline-flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="startQuiz()"/>
             </div>
-           </div> 
-            <form id="quizform">
-<!-- Question 1 -->
-<div id="question1">
-    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=12l7hAaB1LHk-GVTxviczJUMR6C3D_dHE" alt="Astro sleeps">
-        <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
-            <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">How many hours do pugs sleep?</p>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest1" id="a1" value=1 />
-            <label for="a1" class="text-center">a) 24+ hours </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest1" id="a2" value=1 />
-            <label for="a2">b) 8 hours </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest1" id="a3" value=3  />
-            <label for="a3">c) 14 -16 hours </label></div>
-            <div class="row justify-content-center pt-4">
-            <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question2()"/></div>
-            </div>
-            </div>
-        </div>
-<!--Question 2-->
-<div id="question2">
-    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
-        <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
-            <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">How do you exercise a pug?</p>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest2" id="a1" value=1 />
-            <label for="a1" class="text-center">a) Grab food and run! </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest2" id="a2" value=2 />
-            <label for="a2">b) Buy a Peloton.</label> </div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest2" id="a3" value=3  />
-            <label for="a3">c) Walk them regulary. </label></div>
-            <div class="row justify-content-center pt-4">
-            <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question3()" /></div>
-            </div>
+    </div> 
+    <form id="quizform">
+    <!-- Question 1 -->
+        <div id="question1" class="hidden">
+            <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=12l7hAaB1LHk-GVTxviczJUMR6C3D_dHE" alt="Astro sleeps">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
+                    <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">How many hours a day do pugs sleep?</p>
+                    <div class="row">
+                        <input type="radio" name="quest1" id="1a" value=5 />
+                        <label for="1a">25 hours</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest1" id="1b" value=0 />
+                        <label for="1b">8 hours</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest1" id="1c" value=10  />
+                        <label for="1c">14-16 hours</label>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                        <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question2()"/>
+                    </div>
+                </div>
             </div>
         </div>
-<!-- Question 3 -->
-<div id="question3">
-    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
-        <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
-            <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">A group of pugs is called...</p>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest3" id="a1" value=1 />
-            <label for="a1" class="text-center">a) Oh my god! </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest3" id="a2" value=2 />
-            <label for="a2">b) Pug Gang </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest3" id="a3" value=3  />
-            <label for="a3">c) Grumble </label></div>
-            <div class="row justify-content-center pt-4">
-            <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question4()"/></div>
-            </div>
+    <!--Question 2-->
+        <div id="question2" class="hidden">
+            <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
+                    <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">How do you exercise a pug?</p>
+                    <div class="row">
+                        <input type="radio" name="quest2" id="2a" value=5 />
+                        <label for="2a">Grab food and run!</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest2" id="2b" value=0 />
+                        <label for="2b">Buy a Peloton</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest2" id="2c" value=10  />
+                        <label for="2c">Walk them regulary</label>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                    <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question3()" /></div>
+                </div>
             </div>
         </div>
-<!-- Question 4 -->
-<div id="question4">
-    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
-        <div class="flex flex-col justify-between p-4 leading-normal">
+    <!-- Question 3 -->
+        <div id="question3" class="hidden">
+            <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
+                    <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">A group of pugs is called...</p>
+                    <div class="row">
+                    <input type="radio" name="quest3" id="3a" value=5 />
+                    <label for="3a">Oh my god!</label></div>
+                    <div class="row">
+                    <input type="radio" name="quest3" id="3b" value=0 />
+                    <label for="3b">Pug Gang</label></div>
+                    <div class="row">
+                    <input type="radio" name="quest3" id="3c" value=10  />
+                    <label for="3c">Grumble</label></div>
+                    <div class="row justify-content-center pt-4">
+                    <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question4()"/></div>
+                </div>
+            </div>
+        </div>
+    <!-- Question 4 -->
+        <div id="question4" class="hidden">
+            <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
+                    <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">In which classification group do pugs belong? </p>
+                    <div class="row">
+                        <input type="radio" name="quest4" id="4a" value=5 />
+                        <label for="4a">Chilling</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest4" id="4b" value=0 />
+                        <label for="4b">Herding</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest4" id="4c" value=10  />
+                        <label for="4c">Companion</label>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                    <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question5()"/></div>
+                </div>
+            </div>
+        </div>
+    <!-- Question 5 -->
+        <div id="question5" class="hidden">
+            <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
+                    <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">What is that movie called?</p>
+                    <div class="row">
+                        <input type="radio" name="quest5" id="5a" value=5 />
+                        <label for="5a">Wall-E</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest5" id="5b" value=0 />
+                        <label for="5b">Alien</label>
+                    </div>
+                    <div class="row">
+                        <input type="radio" name="quest5" id="5c" value=10  />
+                        <label for="5c">Men In Black</label>
+                    </div>
+                    <div class="row justify-content-center pt-4">
+                    <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="results()"/></div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--Results-->
+    <div id="results" class="hidden">
+        <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1-P47wGJa1Ai94D1zLYS8Jog2LbHGVWgX" alt="Astro looking up.">
+            <div class="flex flex-col justify-between p-4 leading-normal">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
-            <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">In which classification group do pugs belong? </p>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest4" id="a1" value=1 />
-            <label for="a1" class="text-center">a) Chilling </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest4" id="a2" value=2 />
-            <label for="a2">b) Herding </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest4" id="a3" value=3  />
-            <label for="a3">c) Companion </label></div>
+            <p id="scoreMessage" class="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
+            <p id="resultsMessage" class="mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
             <div class="row justify-content-center pt-4">
-            <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="question5()"/></div>
+                <input type="button" value="Start Again" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="location.reload()"/></div>
+            </div>
         </div>
     </div>
-<!-- Question 5 -->
-<div id="question5">
-    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1Cd-H283IUgHrZf5jVwcPfnc0KRG_7QYM" alt="Astro running">
-        <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
-            <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">What is that movie called?</p>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest5" id="a1" value=1 />
-            <label for="a1" class="text-center">a) Wall-E </label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest5" id="a2" value=2 />
-            <label for="a2">b) Alien</label></div>
-            <div class="row justify-content-center">
-            <input type="radio" name="quest5" id="a3" value=3  />
-            <label for="a3">c) Men In Black </label></div>
-            <div class="row justify-content-center pt-4">
-            <input type="button" value="Next" class="flex justify-start mx-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="results()"/></div>
-            </div>
-        </div>
-</div>
-</form>
-<!--Results-->
-<div id="results">
-    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://drive.google.com/uc?id=1-P47wGJa1Ai94D1zLYS8Jog2LbHGVWgX" alt="Astro looking up.">
-        <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">How well do you know pugs?</h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Your Pug Knowledge Results</p>
-        </div>
-        </div> 
-</div>
-        <!-- link to JavaScript -->
-        <script src="index.js"></script>
-      </body>
-    </html> 
+<!-- link to JavaScript -->
+<script src="index.js"></script>
 </body>
 </html>
